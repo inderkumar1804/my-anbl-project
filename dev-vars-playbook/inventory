@@ -1,0 +1,15 @@
+db1.lab.example.come
+db2.lab.example.com
+192.168.10.7
+
+
+[webservers]
+servera.lab.example.com
+
+
+[appserver]
+serverb.lab.example.com
+
+
+[dbserver]
+serverc.lab.example.com
