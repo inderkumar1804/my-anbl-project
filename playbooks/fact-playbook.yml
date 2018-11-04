@@ -1,0 +1,21 @@
+---
+- name: Use of gather facts variable 
+  hosts: appserver,webservers
+  remote_user: devops
+  become: true
+
+  tasks:
+    - name: Print various Ansible Facts
+      debug:
+        msg: >
+          Current date: {{ ansible_date_time.date }}\n
+          The default IPv4 address of {{ ansible_fqdn }}
+          is {{ ansible_default_ipv4.address }}\n
+          Total memory on {{ ansible_fqdn }} is {{ ansible_memtotal_mb }}\n 
+          and free memory is {{ ansible_memfree_mb }}\n
+          Kernel version: {{ ansible_kernel }}\n
+          Hardware version: {{ ansible_machine }}\n
+          OS Vendor: {{ ansible_os_family }}\n
+          CPU Count: {{ ansible_processor_count }}\n
+          CPU Cores: {{ ansible_processor_cores }}\n
+
